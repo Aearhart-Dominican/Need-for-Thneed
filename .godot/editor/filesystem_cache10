@@ -1,9 +1,12 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1767073220
-export_presets.cfg::TextFile::-1::1763968639::0::1::::<><><>0<>0<><>::
+::res://::1767074056
+export_presets.cfg::TextFile::-1::1767074056::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::4730785257948509986::1763966927::1767073220::1::::<><><>0<>0<>b50f4abdcf6c8cc7a7f810ac7b10d09b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+index.apple-touch-icon.png::CompressedTexture2D::1571861791577735822::1767074055::1767074072::1::::<><><>0<>0<>4958737e3579b31466a57490e2c95470<>res://.godot/imported/index.apple-touch-icon.png-8085a11cc297d91deb55511843765958.ctex::
+index.icon.png::CompressedTexture2D::8709542435771542329::1767074055::1767074072::1::::<><><>0<>0<>485ba8f9d36ea683ae1beadff904d56b<>res://.godot/imported/index.icon.png-5665fad188e88d1e882500a4376bfe02.ctex::
+index.png::CompressedTexture2D::5034617318851149089::1767074055::1767074072::1::::<><><>0<>0<>a06906b5080a8676ad1cf65a9f7750ec<>res://.godot/imported/index.png-5122033cac747157decad52589e2295c.ctex::
 README.md::TextFile::-1::1767073002::0::1::::<><><>0<>0<><>::
-::res://assets/::1765051060
+::res://assets/::1767073220
 arrow.png::CompressedTexture2D::3195873582474578335::1764139447::1767073220::1::::<><><>0<>0<>3e668815b7a6f0a1a20fe740405fab69<>res://.godot/imported/arrow.png-af9c40b335090227900bc7e5c1ee343c.ctex::
 coins.svg::CompressedTexture2D::7665457544211881533::1763967526::1767073220::1::::<><><>0<>0<>2451967d2d85abfbbb55288affcafbd1<>res://.godot/imported/coins.svg-5e76e2b25f5f10ab6b290bce2b02e42e.ctex::
 hand.png::CompressedTexture2D::4605416508654104154::1764141657::1767073220::1::::<><><>0<>0<>d9e0ea5df2400be11048e9d59575aed8<>res://.godot/imported/hand.png-5390196fb1554350de487a1bb25078ac.ctex::
@@ -17,7 +20,7 @@ main.tscn::PackedScene::6719223887863306514::1765051538::0::1::::<><><>0<>0<><>:
 player.tscn::PackedScene::5904847534567538958::1765048427::0::1::::<><><>0<>0<><>::uid://b8nvlvm3mhd6a::::res://icon.svg<>uid://chryl2x0qs6ax::::res://scripts/player.gd<>uid://3ok1t7jdguoq::::res://scenes/interact_component.tscn<>uid://cxyp4rxlie8ro::::res://scenes/axe.tscn
 tree.tscn::PackedScene::2819993219935258057::1765051910::0::1::::<><><>0<>0<><>::uid://cn5pxl55cvf72::::res://scripts/tree.gd<>uid://bh6ywqgq6ql44::::res://assets/tree.png
 ui.tscn::PackedScene::8024382190354213560::1765051045::0::1::::<><><>0<>0<><>::uid://vegehfj5tm21::::res://scripts/ui.gd<>uid://blsdtob2v1egd::::res://assets/arrow.png<>uid://dhxdyh6h1w33y::::res://scripts/button_press.gd<>uid://dliwqkprsh0cc::::res://scripts/axe_button.png<>uid://b6u5si2y5ly1o::::res://assets/hand.png
-::res://scripts/::1765051895
+::res://scripts/::1767073220
 axe.gd::GDScript::296841455993567114::1764617415::0::1::::<>Node2D<><>0<>0<><>::
 axe_button.png::CompressedTexture2D::7949219248875806178::1764141653::1767073220::1::::<><><>0<>0<>123f391327ffc1b0f16b2a59c6e49e47<>res://.godot/imported/axe_button.png-618932c0ffa86a23b729f32903b75fd7.ctex::
 axe_item.gd::GDScript::6229456115077380793::1764615413::0::1::::<>Node2D<><>0<>0<><>::
