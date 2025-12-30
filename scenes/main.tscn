@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2y3vu6hg8y6m"]
+
+[ext_resource type="PackedScene" uid="uid://cqel8gp8tjf2m" path="res://scenes/player.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dmlcnxb6umlvc" path="res://scenes/ui.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://c7shdgenbsgad" path="res://scripts/pretendinteract.gd" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dhhg73qoow4hl" path="res://assets/coins.svg" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://3gqot40kn1hg" path="res://scenes/interactable.tscn" id="5_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cuolufl4gq0lm" path="res://scenes/axe_item.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bgga42behagwv" path="res://scenes/tree.tscn" id="7_o6xl0"]
+
+[node name="Main" type="Node"]
+
+[node name="UI" parent="." instance=ExtResource("2_sugp2")]
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." instance=ExtResource("1_0wfyh")]
+position = Vector2(585, 292)
+
+[node name="coins" type="Node2D" parent="."]
+position = Vector2(183, 144)
+script = ExtResource("3_tbgi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="coins"]
+texture = ExtResource("4_tefeu")
+
+[node name="Interactable" parent="coins" instance=ExtResource("5_o6xl0")]
+interact_name = "Collect Coins"
+
+[node name="Timer" type="Timer" parent="coins"]
+wait_time = 5.0
+
+[node name="axe" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(925, 85)
+scale = Vector2(2, 2)
+
+[node name="tree" parent="." instance=ExtResource("7_o6xl0")]
+position = Vector2(-199, 243)
+scale = Vector2(2.5, 2.5)
+
+[node name="tree2" parent="." instance=ExtResource("7_o6xl0")]
+position = Vector2(-133, 92)
+scale = Vector2(3.5, 3.5)
+
+[node name="tree3" parent="." instance=ExtResource("7_o6xl0")]
+position = Vector2(-80, 366)
+scale = Vector2(3, 3)
+
+[connection signal="timeout" from="coins/Timer" to="coins" method="_on_timer_timeout"]
+[connection signal="axe_pickup" from="axe" to="UI" method="_on_axe_pickup"]
+[connection signal="axe_pickup" from="axe" to="player" method="_on_axe_pickup"]

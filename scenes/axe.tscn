@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxyp4rxlie8ro"]
+
+[ext_resource type="Script" uid="uid://eh162lntrpm5" path="res://scripts/axe.gd" id="1_725vr"]
+[ext_resource type="Texture2D" uid="uid://dliwqkprsh0cc" path="res://scripts/axe_button.png" id="3_uel4w"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_8s0ly"]
+points = PackedVector2Array(64, -80, -64, -80, -32, 0, 32, 0)
+
+[sub_resource type="Animation" id="Animation_725vr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.7853982]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_q6140"]
+resource_name = "swing"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-2.0943951023931953, 0.17453292519943295]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uel4w"]
+_data = {
+&"RESET": SubResource("Animation_725vr"),
+&"swing": SubResource("Animation_q6140")
+}
+
+[node name="axe" type="Node2D"]
+script = ExtResource("1_725vr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.4901161e-08, -1.1920929e-07)
+rotation = -0.7853982
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_uel4w")
+offset = Vector2(10.902261, -10.999263)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("ConvexPolygonShape2D_8s0ly")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uel4w")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

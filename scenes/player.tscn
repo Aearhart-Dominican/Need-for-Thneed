@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqel8gp8tjf2m"]
+
+[ext_resource type="Texture2D" uid="uid://b8nvlvm3mhd6a" path="res://icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://chryl2x0qs6ax" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://3ok1t7jdguoq" path="res://scenes/interact_component.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://cxyp4rxlie8ro" path="res://scenes/axe.tscn" id="4_dqkch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vyb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(128, 128)
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("axe")]
+motion_mode = 1
+script = ExtResource("1_g2els")
+axe = NodePath("axe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="InteractComponent" parent="." instance=ExtResource("3_qhqgy")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="axe" parent="." instance=ExtResource("4_dqkch")]
+scale = Vector2(2, 2)

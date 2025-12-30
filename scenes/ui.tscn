@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmlcnxb6umlvc"]
+
+[ext_resource type="Script" uid="uid://vegehfj5tm21" path="res://scripts/ui.gd" id="1_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://blsdtob2v1egd" path="res://assets/arrow.png" id="1_yev5y"]
+[ext_resource type="Script" uid="uid://dhxdyh6h1w33y" path="res://scripts/button_press.gd" id="2_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://dliwqkprsh0cc" path="res://scripts/axe_button.png" id="3_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://b6u5si2y5ly1o" path="res://assets/hand.png" id="4_wm3ai"]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("axe_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wm3ai")
+axe_button = NodePath("CanvasLayer/attack")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="up" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture_filter = 1
+position = Vector2(176, 320)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_yev5y")
+shape_centered = false
+passby_press = true
+action = "up"
+script = ExtResource("2_gdt2y")
+
+[node name="attack" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture_filter = 1
+position = Vector2(956, 332)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_gdt2y")
+action = "swing"
+script = ExtResource("2_gdt2y")
+
+[node name="interact" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture_filter = 1
+position = Vector2(956, 479)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("4_wm3ai")
+action = "interact"
+script = ExtResource("2_gdt2y")
+
+[node name="left" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture_filter = 1
+position = Vector2(72.00001, 512)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_yev5y")
+passby_press = true
+action = "left"
+script = ExtResource("2_gdt2y")
+
+[node name="right" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture_filter = 1
+position = Vector2(376, 416)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_yev5y")
+passby_press = true
+action = "right"
+script = ExtResource("2_gdt2y")
+
+[node name="down" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture_filter = 1
+position = Vector2(272, 608)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_yev5y")
+passby_press = true
+action = "down"
+script = ExtResource("2_gdt2y")
